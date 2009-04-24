@@ -1,0 +1,21 @@
+Source: rtems-libbspext
+Section: devel
+Priority: extra
+Maintainer: Michael Davidsaver <mdavidsaver@bnl.gov>
+Build-Depends: debhelper (>= 7), rtems-mvme2100, rtems-mvme3100
+Standards-Version: 3.8.0
+Homepage: http://www.slac.stanford.edu/~strauman/rtems/software.html
+
+Package: rtems-libbspext-mvme2100
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, rtems-mvme2100
+Description: Support library mvmve2100 on RTEMS
+ A library containing a variety of support routines not provided
+ by the standard RTEMS board support package for this device.
+
+Package: rtems-libbspext-mvme3100
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, rtems-mvme3100
+Description: Support library mvmve2100 on RTEMS
+ A library containing a variety of support routines not provided
+ by the standard RTEMS board support package for this device.

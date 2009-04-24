@@ -1,0 +1,21 @@
+This package was debianized by Michael Davidsaver <mdavidsaver@bnl.gov> on
+Fri, 24 Apr 2009 10:41:34 -0400.
+
+It was downloaded from http://www.slac.stanford.edu/~strauman/rtems/software.html
+
+Upstream Author(s):
+
+    Till Straumann <strauman_at_slac.stanford.edu>
+
+Copyright:
+
+    Copyright (C) 2009 Stanford University
+
+License:
+
+    Stanford University, owner of the copyright, hereby disclaims its
+    copyright and all other rights in this software.  Hence, anyone may
+    freely use it for any purpose without restriction.
+
+The Debian packaging is (C) 2009, Michael Davidsaver <mdavidsaver@bnl.gov> and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL'.

@@ -1,0 +1,6 @@
+rtems-libbspext (1.5-1) unstable; urgency=low
+
+  * Initial release (Closes: #0000)
+
+ -- Michael Davidsaver <mdavidsaver@bnl.gov>  Fri, 24 Apr 2009 10:41:34 -0400
+
