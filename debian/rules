@@ -11,7 +11,7 @@
 
 RV=4.9
 RARCH=powerpc
-BSPS=mvme2100 mvme3100
+BSPS=mvme2100 mvme3100 mvme5500
 
 build: build-stamp
 
@@ -45,6 +45,9 @@ install: build
 	dh_installdirs
 
 	$(foreach bsp,$(BSPS),$(call inst_cmd,$(bsp)))
+	#TODO: why is the first (in control) package expected
+	#      to be in debian/tmp???
+	mv debian/rtems-libbspext-mvme2100/usr/$(RARCH)-rtems$(RV) debian/tmp/usr
 
 
 # Build architecture-independent files here.
@@ -64,7 +67,7 @@ binary-arch: build install
 	dh_compress
 	dh_fixperms
 	dh_installdeb
-	dh_shlibdeps
+	#dh_shlibdeps
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
