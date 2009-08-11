@@ -1,3 +1,10 @@
+rtems-libbspext (1.5-2) unstable; urgency=low
+
+  * Patches:
+  *   Add extern "C" {} to bspExt.h
+
+ -- Michael Davidsaver <mdavidsaver@bnl.gov>  Tue, 11 Aug 2009 15:11:00 -0400
+
 rtems-libbspext (1.5-1) unstable; urgency=low
 
   * Initial release (Closes: #0000)
