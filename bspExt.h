@@ -63,6 +63,9 @@
 	 || (__RTEMS_MAJOR__ == (ma) && __RTEMS_MINOR__ == (mi) && __RTEMS_REVISION__ >= (re)) \
     )
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /* initialize the bsp extensions */
 rtems_status_code
@@ -243,6 +246,10 @@ int bspExtInstallEHandler(BspExtEHandler h, void *usrData, int where);
  */
 int bspExtRemoveEHandler(BspExtEHandler h, void *usrData);
 
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif
