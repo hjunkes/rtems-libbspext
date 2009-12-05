@@ -1,0 +1,3 @@
+rtems-libbspext-mvme3100 binary: non-standard-dir-in-usr
+rtems-libbspext-mvme3100 binary: file-in-unusual-dir
+# Cross compile lives in usr/*/include an similar
