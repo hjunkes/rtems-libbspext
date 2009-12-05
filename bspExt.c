@@ -73,7 +73,7 @@ bspExtUnlock()
 extern void _bspExtMemProbeInit(void);
 #endif
 
-int bspExtVerbosity = 1;
+int bspExtVerbosity = 0;
 
 rtems_status_code
 bspExtInit(void)
