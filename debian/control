@@ -11,7 +11,7 @@ Homepage: http://www.slac.stanford.edu/~strauman/rtems/software.html
 
 Package: rtems-libbspext-mvme2100
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
+Depends: ${misc:Depends},
          rtems-mvme2100 (>= 4.9.2), rtems-mvme2100 (<< 4.9.3)
 Description: Support library mvmve2100 on RTEMS
  A library containing a variety of support routines not provided
@@ -19,7 +19,7 @@ Description: Support library mvmve2100 on RTEMS
 
 Package: rtems-libbspext-mvme3100
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
+Depends: ${misc:Depends},
          rtems-mvme3100 (>= 4.9.2), rtems-mvme3100 (<< 4.9.3)
 Description: Support library mvmve3100 on RTEMS
  A library containing a variety of support routines not provided
@@ -27,7 +27,7 @@ Description: Support library mvmve3100 on RTEMS
 
 Package: rtems-libbspext-mvme5500
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
+Depends: ${misc:Depends},
          rtems-mvme5500 (>= 4.9.2), rtems-mvme5500 (<< 4.9.3)
 Description: Support library mvmve5500 on RTEMS
  A library containing a variety of support routines not provided
