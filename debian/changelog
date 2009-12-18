@@ -1,3 +1,9 @@
+rtems-libbspext (1.5-4) unstable; urgency=low
+
+  * Use rtems-debhelper to generate dependencies
+
+ -- Michael Davidsaver <mdavidsaver@bnl.gov>  Fri, 18 Dec 2009 13:58:46 -0500
+
 rtems-libbspext (1.5-3) unstable; urgency=low
 
   * Depend on a specific RTEMS version to prevent upgrade problems
