@@ -28,7 +28,7 @@ build-$(1)-stamp:
 
 install/rtems-libbspext-$(1)::
 	install -d $(CURDIR)/debian/tmp$$($1_bspbase)/bin
-	$(MAKE) ARCH=x-$(@:install-%=%) RTEMS_MAKEFILE_PATH=$$($1_bspbase) \
+	$(MAKE) ARCH=x-$(1) RTEMS_MAKEFILE_PATH=$$($1_bspbase) \
 RTEMS_SITE_INSTALLDIR=$(CURDIR)/debian/tmp$$($1_bspbase) \
 INSTINCDIR=$(CURDIR)/debian/tmp$$($1_bspbase)/lib/include \
 install
