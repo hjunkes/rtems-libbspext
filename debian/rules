@@ -11,12 +11,31 @@ RV=4.9
 
 DEB_INSTALL_DOCS_ALL := README.memProbeAndPCI
 
+# $1 is bsp name (ie mvme3100)
 define bsprule
-build/$(1):: build-$(1:rtems-libbspext-%=%)
-install/$(1):: install-$(1:rtems-libbspext-%=%)
+
+# This install prefix w/ arch
+# This will be /usr/powerpc-rtems4.9/mvme3100 or similar
+$1_bspbase=$(dir $(wildcard /usr/*-rtems$(RV)/$1/Makefile.inc))
+
+build/rtems-libbspext-$(1):: build-$(1)-stamp
+
+build-$(1)-stamp:
+
+	$(MAKE) ARCH=x-$(1) RTEMS_MAKEFILE_PATH=$$($1_bspbase)
+
+	touch $$@
+
+install/rtems-libbspext-$(1)::
+	install -d $(CURDIR)/debian/tmp$$($1_bspbase)/bin
+	$(MAKE) ARCH=x-$(@:install-%=%) RTEMS_MAKEFILE_PATH=$$($1_bspbase) \
+RTEMS_SITE_INSTALLDIR=$(CURDIR)/debian/tmp$$($1_bspbase) \
+INSTINCDIR=$(CURDIR)/debian/tmp$$($1_bspbase)/lib/include \
+install
+
 endef
 
-$(foreach p,$(DEB_ARCH_PACKAGES),$(eval $(call bsprule,$(p))))
+$(foreach p,$(DEB_ARCH_PACKAGES),$(eval $(call bsprule,$(p:rtems-libbspext-%=%))))
 
 build-%:
 
@@ -29,6 +48,9 @@ install-%::
 RTEMS_SITE_INSTALLDIR=$(CURDIR)/debian/tmp/usr/powerpc-rtems$(RV)/$(@:install-%=%) \
 INSTINCDIR=$(CURDIR)/debian/tmp/usr/powerpc-rtems$(RV)/$(@:install-%=%)/lib/include \
 install
+
+common-binary-fixup-arch::
+	dh_rtems
 
 clean::
 	rm -f build-*
