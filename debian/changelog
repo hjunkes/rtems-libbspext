@@ -1,3 +1,9 @@
+rtems-libbspext (1.5-7) unstable; urgency=low
+
+  * debian/control: Missing ',' is build depends list
+
+ -- Michael Davidsaver <mdavidsaver@bnl.gov>  Fri, 05 Mar 2010 13:48:15 -0500
+
 rtems-libbspext (1.5-6) unstable; urgency=low
 
   * Build for mvme2307 powerpc bsp
