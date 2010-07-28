@@ -1,0 +1,5 @@
+AM_CPPFLAGS     = -Wall
+AM_CFLAGS       = -Wall
+AM_CXXFLAGS     = -Wall
+AM_CCASFLAGS    = 
+AM_LDFLAGS      =

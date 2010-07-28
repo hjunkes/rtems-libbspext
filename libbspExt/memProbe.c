@@ -1,4 +1,4 @@
-/* $Id: memProbe.c,v 1.20 2008/10/25 20:22:40 strauman Exp $ */
+/* $Id: memProbe.c,v 1.21 2010/02/12 18:19:32 strauman Exp $ */
 
 /* Address Probing for Powerpc - RTEMS
  *
@@ -98,7 +98,7 @@ __attribute__((weak, alias("_bspExtMemProbe_dummy_clear_hostbridge_errors")));
 unsigned long
 _bspExtMemProbe_dummy_clear_hostbridge_errors(int enableMCP, int quiet)
 {
-	return 0;
+	return  enableMCP ? -1 : 0;
 }
 
 extern int

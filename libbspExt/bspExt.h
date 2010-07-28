@@ -1,6 +1,6 @@
 #ifndef TILL_BSP_EXTENSION_H
 #define TILL_BSP_EXTENSION_H
-/* $Id: bspExt.h,v 1.15 2008/10/25 20:22:40 strauman Exp $ */
+/* $Id: bspExt.h,v 1.16 2009/08/06 19:57:17 strauman Exp $ */
 
 /* RTEMS-PowerPC BSP extension library (address probing) */
 
@@ -62,6 +62,10 @@
 	 || (__RTEMS_MAJOR__ == (ma) && __RTEMS_MINOR__  > (mi))	\
 	 || (__RTEMS_MAJOR__ == (ma) && __RTEMS_MINOR__ == (mi) && __RTEMS_REVISION__ >= (re)) \
     )
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 
 /* initialize the bsp extensions */
@@ -243,6 +247,10 @@ int bspExtInstallEHandler(BspExtEHandler h, void *usrData, int where);
  */
 int bspExtRemoveEHandler(BspExtEHandler h, void *usrData);
 
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif
