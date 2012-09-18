@@ -1,3 +1,11 @@
+rtems-libbspext (1.5-8) unstable; urgency=low
+
+  * Backport code changes from 1.6
+  * Identify target binaries packages as host independent
+  * Build for rtems 4.10
+
+ -- Michael Davidsaver <mdavidsaver@bnl.gov>  Tue, 18 Sep 2012 11:41:32 -0400
+
 rtems-libbspext (1.5-7) unstable; urgency=low
 
   * debian/control: Missing ',' is build depends list
