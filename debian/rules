@@ -7,7 +7,7 @@ include /usr/share/cdbs/1/rules/utils.mk
 # Don't strip
 DEB_DH_STRIP_ARGS := -Xusr
 
-RV=4.10
+RV=$(shell cat /usr/share/rtems-common/series)
 
 DEB_INSTALL_DOCS_ALL := README.memProbeAndPCI
 
