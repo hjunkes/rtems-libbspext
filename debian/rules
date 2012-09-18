@@ -35,7 +35,7 @@ install
 
 endef
 
-$(foreach p,$(DEB_ARCH_PACKAGES),$(eval $(call bsprule,$(p:rtems-libbspext-%=%))))
+$(foreach p,$(DEB_INDEP_PACKAGES),$(eval $(call bsprule,$(p:rtems-libbspext-%=%))))
 
 build-%:
 
@@ -49,7 +49,7 @@ RTEMS_SITE_INSTALLDIR=$(CURDIR)/debian/tmp/usr/powerpc-rtems$(RV)/$(@:install-%=
 INSTINCDIR=$(CURDIR)/debian/tmp/usr/powerpc-rtems$(RV)/$(@:install-%=%)/lib/include \
 install
 
-common-binary-fixup-arch::
+common-binary-fixup-indep::
 	dh_rtems
 
 clean::

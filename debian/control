@@ -9,28 +9,28 @@ Standards-Version: 3.8.0
 Homepage: http://www.slac.stanford.edu/~strauman/rtems/software.html
 
 Package: rtems-libbspext-mvme2100
-Architecture: any
+Architecture: all
 Depends: ${rtems:Depends}
 Description: Support library mvmve2100 on RTEMS
  A library containing a variety of support routines not provided
  by the standard RTEMS board support package for this device.
 
 Package: rtems-libbspext-mvme2307
-Architecture: any
+Architecture: all
 Depends: ${rtems:Depends}
 Description: Support library mvmve2307 on RTEMS
  A library containing a variety of support routines not provided
  by the standard RTEMS board support package for this device.
 
 Package: rtems-libbspext-mvme3100
-Architecture: any
+Architecture: all
 Depends: ${rtems:Depends}
 Description: Support library mvmve3100 on RTEMS
  A library containing a variety of support routines not provided
  by the standard RTEMS board support package for this device.
 
 Package: rtems-libbspext-mvme5500
-Architecture: any
+Architecture: all
 Depends: ${rtems:Depends}
 Description: Support library mvmve5500 on RTEMS
  A library containing a variety of support routines not provided
