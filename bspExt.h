@@ -1,6 +1,6 @@
 #ifndef TILL_BSP_EXTENSION_H
 #define TILL_BSP_EXTENSION_H
-/* $Id: bspExt.h,v 1.15 2008/10/25 20:22:40 strauman Exp $ */
+/* $Id: bspExt.h,v 1.16 2009/08/06 19:57:17 strauman Exp $ */
 
 /* RTEMS-PowerPC BSP extension library (address probing) */
 
@@ -66,6 +66,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+
 
 /* initialize the bsp extensions */
 rtems_status_code
