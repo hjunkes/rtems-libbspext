@@ -7,7 +7,7 @@ include /usr/share/cdbs/1/rules/utils.mk
 # Don't strip
 DEB_DH_STRIP_ARGS := -Xusr
 
-RV=4.9
+RV=4.10
 
 DEB_INSTALL_DOCS_ALL := README.memProbeAndPCI
 
@@ -15,7 +15,7 @@ DEB_INSTALL_DOCS_ALL := README.memProbeAndPCI
 define bsprule
 
 # This install prefix w/ arch
-# This will be /usr/powerpc-rtems4.9/mvme3100 or similar
+# This will be /usr/powerpc-rtems4.10/mvme3100 or similar
 $1_bspbase=$(dir $(wildcard /usr/*-rtems$(RV)/$1/Makefile.inc))
 
 build/rtems-libbspext-$(1):: build-$(1)-stamp
