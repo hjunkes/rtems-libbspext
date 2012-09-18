@@ -3,7 +3,8 @@ Section: devel
 Priority: extra
 Maintainer: Michael Davidsaver <mdavidsaver@bnl.gov>
 Build-Depends: debhelper (>= 7), rtems-debhelper, cdbs,
-               rtems-mvme2100, rtems-mvme2307, rtems-mvme3100, rtems-mvme5500
+               rtems-mvme2100, rtems-mvme2307, rtems-mvme3100, rtems-mvme5500,
+               rtems-beatnik,
 Rtems-Depends: rtems
 Standards-Version: 3.8.0
 Homepage: http://www.slac.stanford.edu/~strauman/rtems/software.html
@@ -11,27 +12,34 @@ Homepage: http://www.slac.stanford.edu/~strauman/rtems/software.html
 Package: rtems-libbspext-mvme2100
 Architecture: all
 Depends: ${rtems:Depends}
-Description: Support library mvmve2100 on RTEMS
+Description: Support library for mvmve2100 on RTEMS
  A library containing a variety of support routines not provided
  by the standard RTEMS board support package for this device.
 
 Package: rtems-libbspext-mvme2307
 Architecture: all
 Depends: ${rtems:Depends}
-Description: Support library mvmve2307 on RTEMS
+Description: Support library formvmve2307 on RTEMS
  A library containing a variety of support routines not provided
  by the standard RTEMS board support package for this device.
 
 Package: rtems-libbspext-mvme3100
 Architecture: all
 Depends: ${rtems:Depends}
-Description: Support library mvmve3100 on RTEMS
+Description: Support library formvmve3100 on RTEMS
  A library containing a variety of support routines not provided
  by the standard RTEMS board support package for this device.
 
 Package: rtems-libbspext-mvme5500
 Architecture: all
 Depends: ${rtems:Depends}
-Description: Support library mvmve5500 on RTEMS
+Description: Support library formvmve5500 on RTEMS
+ A library containing a variety of support routines not provided
+ by the standard RTEMS board support package for this device.
+
+Package: rtems-libbspext-beatnik
+Architecture: all
+Depends: ${rtems:Depends}
+Description: Support library forbeatnik on RTEMS
  A library containing a variety of support routines not provided
  by the standard RTEMS board support package for this device.

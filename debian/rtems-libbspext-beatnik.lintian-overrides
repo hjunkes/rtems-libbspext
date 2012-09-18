@@ -1,0 +1,4 @@
+rtems-libbspext-beatnik binary: non-standard-dir-in-usr
+rtems-libbspext-beatnik binary: file-in-unusual-dir
+# Cross compile lives in usr/*/include an similar
+rtems-libbspext-beatnik: arch-independent-package-contains-binary-or-object
