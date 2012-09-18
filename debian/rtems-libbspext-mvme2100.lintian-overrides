@@ -1,3 +1,4 @@
 rtems-libbspext-mvme2100 binary: non-standard-dir-in-usr
 rtems-libbspext-mvme2100 binary: file-in-unusual-dir
 # Cross compile lives in usr/*/include an similar
+rtems-libbspext-mvme2100: arch-independent-package-contains-binary-or-object
