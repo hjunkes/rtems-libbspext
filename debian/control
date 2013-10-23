@@ -3,7 +3,7 @@ Section: devel
 Priority: extra
 Maintainer: Michael Davidsaver <mdavidsaver@bnl.gov>
 Build-Depends: debhelper (>= 7), rtems-debhelper, cdbs,
-               rtems-common (>= 4.10.2-2~),
+               rtems-common (>= 4.9.6-1~),
                rtems-mvme2100, rtems-mvme2307, rtems-mvme3100, rtems-mvme5500,
                rtems-beatnik,
 Rtems-Depends: rtems

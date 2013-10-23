@@ -1,3 +1,9 @@
+rtems-libbspext (1.5-9) unstable; urgency=low
+
+  * Change dependency to rtems-common (>=4.9.6-1~)
+
+ -- Leonid Flaks <flaks@bnl.gov>  Wed, 23 Oct 2013 14:36:19 -0400
+
 rtems-libbspext (1.5-8) unstable; urgency=low
 
   * Backport code changes from 1.6
