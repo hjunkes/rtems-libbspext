@@ -5,7 +5,6 @@ Maintainer: Michael Davidsaver <mdavidsaver@bnl.gov>
 Build-Depends: debhelper (>= 7), rtems-debhelper, cdbs,
                rtems-common (>= 4.9.6-1~),
                rtems-mvme2100, rtems-mvme2307, rtems-mvme3100, rtems-mvme5500,
-               rtems-beatnik,
 Rtems-Depends: rtems
 Standards-Version: 3.8.0
 Homepage: http://www.slac.stanford.edu/~strauman/rtems/software.html
@@ -38,9 +37,3 @@ Description: Support library formvmve5500 on RTEMS
  A library containing a variety of support routines not provided
  by the standard RTEMS board support package for this device.
 
-Package: rtems-libbspext-beatnik
-Architecture: all
-Depends: ${rtems:Depends}
-Description: Support library forbeatnik on RTEMS
- A library containing a variety of support routines not provided
- by the standard RTEMS board support package for this device.

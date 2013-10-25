@@ -1,3 +1,9 @@
+rtems-libbspext (1.5-10) unstable; urgency=low
+
+  * remove rtems-beatnik to satisfy dependencies
+
+ -- Leonid Flaks <flaks@bnl.gov>  Fri, 25 Oct 2013 14:48:08 -0400
+
 rtems-libbspext (1.5-9) unstable; urgency=low
 
   * Change dependency to rtems-common (>=4.9.6-1~)
