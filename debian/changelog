@@ -1,3 +1,10 @@
+rtems-libbspext (1.5-12) jessie; urgency=medium
+
+  * Switch rules to dh 7 style
+  * skip -11
+
+ -- Michael Davidsaver <mdavidsaver@bnl.gov>  Sun, 10 May 2015 13:00:27 -0400
+
 rtems-libbspext (1.5-10) unstable; urgency=low
 
   * remove rtems-beatnik to satisfy dependencies

@@ -1,57 +1,39 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/rules/utils.mk
+export DH_VERBOSE=1
 
-# Don't strip
-DEB_DH_STRIP_ARGS := -Xusr
-
+# eg. "4.9"
 RV=$(shell cat /usr/share/rtems-common/series)
 
-DEB_INSTALL_DOCS_ALL := README.memProbeAndPCI
+%:
+	dh $@ --with rtems
 
-# $1 is bsp name (ie mvme3100)
-define bsprule
-
-# This install prefix w/ arch
-# This will be /usr/powerpc-rtems4.10/mvme3100 or similar
-$1_bspbase=$(dir $(wildcard /usr/*-rtems$(RV)/$1/Makefile.inc))
-
-build/rtems-libbspext-$(1):: build-$(1)-stamp
-
-build-$(1)-stamp:
-
-	$(MAKE) ARCH=x-$(1) RTEMS_MAKEFILE_PATH=$$($1_bspbase)
-
-	touch $$@
-
-install/rtems-libbspext-$(1)::
-	install -d $(CURDIR)/debian/tmp$$($1_bspbase)/bin
-	$(MAKE) ARCH=x-$(1) RTEMS_MAKEFILE_PATH=$$($1_bspbase) \
-RTEMS_SITE_INSTALLDIR=$(CURDIR)/debian/tmp$$($1_bspbase) \
-INSTINCDIR=$(CURDIR)/debian/tmp$$($1_bspbase)/lib/include \
-install
-
-endef
-
-$(foreach p,$(DEB_INDEP_PACKAGES),$(eval $(call bsprule,$(p:rtems-libbspext-%=%))))
-
-build-%:
-
-	$(MAKE) ARCH=x-$(@:build-%=%) RTEMS_MAKEFILE_PATH=/usr/powerpc-rtems$(RV)/$(@:build-%=%)
-
-	touch $@
-
-install-%::
-	$(MAKE) ARCH=x-$(@:install-%=%) RTEMS_MAKEFILE_PATH=/usr/powerpc-rtems$(RV)/$(@:install-%=%) \
-RTEMS_SITE_INSTALLDIR=$(CURDIR)/debian/tmp/usr/powerpc-rtems$(RV)/$(@:install-%=%) \
-INSTINCDIR=$(CURDIR)/debian/tmp/usr/powerpc-rtems$(RV)/$(@:install-%=%)/lib/include \
-install
-
-common-binary-fixup-indep::
-	dh_rtems
-
-clean::
+override_dh_auto_clean:
 	rm -f build-*
 	rm -rf x-*
+
+# $1 is BSP name (eg. "mvme3100")
+buildcmd = $(MAKE) ARCH=x-$1 RTEMS_MAKEFILE_PATH=/usr/powerpc-rtems$(RV)/$1
+
+override_dh_auto_build:
+	$(call buildcmd,mvme2100)
+	$(call buildcmd,mvme2307)
+	$(call buildcmd,mvme3100)
+	$(call buildcmd,mvme5500)
+
+override_dh_auto_test: # noop
+
+installcmd = $(MAKE) ARCH=x-$1 RTEMS_MAKEFILE_PATH=/usr/powerpc-rtems$(RV)/$1 \
+ RTEMS_SITE_INSTALLDIR=$(CURDIR)/debian/tmp/usr/powerpc-rtems$(RV)/$1 \
+ INSTINCDIR=$(CURDIR)/debian/tmp/usr/powerpc-rtems$(RV)/$1/lib/include \
+install
+
+override_dh_auto_install:
+	$(call installcmd,mvme2100)
+	$(call installcmd,mvme2307)
+	$(call installcmd,mvme3100)
+	$(call installcmd,mvme5500)
+
+override_dh_install:
+	dh_install --fail-missing

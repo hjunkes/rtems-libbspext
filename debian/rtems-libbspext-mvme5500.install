@@ -1,2 +1,3 @@
 usr/powerpc-rtems*/mvme5500/lib/include/bsp/bspExt.h
 usr/powerpc-rtems*/mvme5500/lib/libbspExt.a
+README.memProbeAndPCI usr/share/doc/rtems-libbspext-mvme5500/
