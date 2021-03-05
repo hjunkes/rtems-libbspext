@@ -46,7 +46,7 @@ DEFINES  += -Dmpc7455
 CPPFLAGS +=
 # inline declarations require -O
 CFLAGS   += -Winline
-CFLAGS   += -I$(RTEMS_MAKEFILE_PATH)/beatnik/lib/include 
+CFLAGS   += -I$(RTEMS_MAKEFILE_PATH)/lib/include 
 
 #
 # Add your list of files to delete here.  The config files
